@@ -19,3 +19,8 @@ age_selection = st.slider("Select un age", min_value=20, max_value=100, value=30
 if st.checkbox("print jeu de données"):
   st.write(df[(df.age == age_selection)&(df.ville == user_selection)])
 
+picture = st.camera_input("Take a picture")
+
+if picture:
+    st.image(picture)
+
