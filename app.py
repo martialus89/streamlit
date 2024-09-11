@@ -22,5 +22,6 @@ if uploaded_file is not None:
 
   
     user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
-    # st.write(dataframe[dataframe.user_selection])
+    st.write(dataframe[dataframe.user_selection])
+    
 
