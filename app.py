@@ -9,4 +9,8 @@ df = pd.read_csv('data.csv', sep=';')
 if st.checkbox("print jeu de données"):
   st.write(df)
 
-st.selectbox('Select une profession',[1,2,3])
+ville=df.ville.unique()
+
+st.selectbox('Select une ville',ville)
+
+
