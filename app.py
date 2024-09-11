@@ -24,12 +24,8 @@ if uploaded_file is not None:
 
   
     user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
-    # st.write(dataframe.groupby(user_selection).value_counts()[user_selection])
     st.write(dataframe[user_selection].value_counts())
-      
-             
-    # st.write(dataframe[user_selection])
-    # chart_data = pd.DataFrame(dataframe.groupby(user_selection).count(), columns=[user_selection])
-    # st.bar_chart(chart_data)
+    chart_data = pd.DataFrame(dataframe[user_selection].value_counts(), columns=[user_selection])
+    st.bar_chart(chart_data)
 
 
