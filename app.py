@@ -20,10 +20,12 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file,sep=';')
     st.write(dataframe)
-    st.write(dataframe.groupby(user_selection).count())
+ 
 
   
-    # user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
+    user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
+    st.write(dataframe.user_selection.value_counts()
+             
     # st.write(dataframe[user_selection])
     # chart_data = pd.DataFrame(dataframe.groupby(user_selection).count(), columns=[user_selection])
     # st.bar_chart(chart_data)
