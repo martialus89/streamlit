@@ -26,7 +26,7 @@ if uploaded_file is not None:
     st.write(dataframe[user_selection])
     st.write(dataframe[user_selection].value_counts())
 
-    columns_selected = dataframe[user_selection]
+    columns_selected = dataframe[user_selection].value_counts()
     fig, ax = plt.subplots()
     ax.hist(columns_selected,bins=20)
     st.pyplots(fig)
