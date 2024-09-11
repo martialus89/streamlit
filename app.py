@@ -21,9 +21,7 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file,sep=';')
     st.write(dataframe)
- 
-
-      
+    
     user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
     st.write(dataframe[user_selection])
     st.write(dataframe[user_selection].value_counts())
