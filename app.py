@@ -1,26 +1,22 @@
 import streamlit as st
 import pandas as pd
+from io import StringIO
 
-st.title("My dashboard")
-st.subheader("My subtitle")
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
 
-df = pd.read_csv('data.csv', sep=';')
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
 
-# if st.checkbox("print jeu de données"):
-#   st.write(df)
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
 
-ville=df.ville.unique()
-user_selection = st.selectbox('Select une ville',ville)
-# st.write(df[df.ville == user_selection])
-
-age_selection = st.slider("Select un age", min_value=20, max_value=100, value=30, step=1)
-# st.write(df[df.age == age_selection])
-
-if st.checkbox("print jeu de données"):
-  st.write(df[(df.age == age_selection)&(df.ville == user_selection)])
-
-# picture = st.camera_input("Take a picture")
-
-# if picture:
-#     st.image(picture)
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file)
+    st.write(dataframe)
 
