@@ -10,7 +10,7 @@ if st.checkbox("print jeu de données"):
   st.write(df)
 
 ville=df.ville.unique()
-
-st.selectbox('Select une ville',ville)
+user_selection = st.selectbox('Select une ville',ville)
+st.write(df[df.ville == user_selection])
 
 
