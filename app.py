@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 import numpy as np
-import matplotlib.pyplot as plt
 
 uploaded_file = st.file_uploader("Choose a file",type=['csv'] )
 if uploaded_file is not None:
@@ -25,4 +24,6 @@ if uploaded_file is not None:
     user_selection = st.selectbox('Select une variable',list(dataframe.columns.values))
     st.write(dataframe[user_selection])
     st.write(dataframe[user_selection].value_counts())
+
+
     
