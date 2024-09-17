@@ -1,4 +1,6 @@
 import streamlit as st
+import requests
+
 
 st.title("My dashboard")
 st.subheader("My subtitle")
@@ -21,6 +23,19 @@ with st.form("my_form"):
   
   if submitted:
     st.write(f"Hi {name}")
+    data_user ={
+    'longitude': longitude,
+    'latitude': latitude,
+    'housing_median_age': housing_median_age,
+    'total_rooms': total_rooms,
+    'total_bedrooms': total_bedrooms,
+    'population': population,
+    'households': households,
+    'median_income': median_income
+    }
+    response = requests.post('https://c9e7-34-125-152-163.ngrok-free.app/predict', json=data_user)
+    eval(response.text)
+    
     
 
 
