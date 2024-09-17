@@ -17,7 +17,8 @@ with st.form("my_form"):
   median_income = st.slider("Select un median_income", min_value=20, max_value=100, value=30, step=1)
 
   #every form must have a submit button
-  submitted = st.form_submit("Submit")
+  submitted = st.form_submit_button("Submit")
+  
   if submitted:
     st.write(f"Hi {name}")
     
