@@ -5,8 +5,8 @@ import requests
 st.title("My dashboard")
 st.subheader("My subtitle")
 
-with st.form("my_form"):
-  st.write("my_form")
+with st.form("my_form_1"):
+  st.write("my_form_1")
   name = st.text_input("Your name ?")
   
   longitude = st.slider("Select un longitude", min_value=20, max_value=100, value=30, step=1)
@@ -18,11 +18,14 @@ with st.form("my_form"):
   households = st.slider("Select un households", min_value=20, max_value=100, value=30, step=1)
   median_income = st.slider("Select un median_income", min_value=20, max_value=100, value=30, step=1)
 
+  model_name = st.text_input("Nom du nouveau model ?")
+  
   #every form must have a submit button
   submitted = st.form_submit_button("Submit")
   
   if submitted:
     st.write(f"Hi {name}")
+    
     data_user ={
     'longitude': longitude,
     'latitude': latitude,
@@ -33,28 +36,19 @@ with st.form("my_form"):
     'households': households,
     'median_income': median_income
     }
-    response = requests.post('https://c9e7-34-125-152-163.ngrok-free.app/predict', json=data_user)
+    
+    response = requests.post('https://2266-34-125-152-163.ngrok-free.app/predict', json=data_user)
     st.write(f"{eval(response.text)}")
-    
-    
 
+with st.sidebar.form("my_form_2")
+  st.write("my_form_2")  
+  model_id = st.text_input("model id ?")  
+  submitted = st.form_submit_button("Submit")
+  if submitted:
+    st.write(f"model_id {model_id}")
+    response = requests.get('https://2266-34-125-152-163.ngrok-free.app/new_model', params={'model_uri':model_id})
+    st.write(f"{eval(response.text)}") 
 
-
-
-
-# st.write(df[df.age == age_selection])
-
-
-# {
-#   "longitude": -114,
-#   "latitude": 34.19,
-#   "housing_median_age": 15.0,
-#   "total_rooms": 5612.0,
-#   "total_bedrooms": 1283.0,
-#   "population": 1015.0,
-#   "households": 472.0,
-#   "median_income": 1.4936
-# }
 
 
 
