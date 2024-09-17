@@ -40,7 +40,7 @@ with st.form("my_form_1"):
     response = requests.post('https://2266-34-125-152-163.ngrok-free.app/predict', json=data_user)
     st.write(f"{eval(response.text)}")
 
-with st.sidebar.form("my_form_2")
+with st.sidebar.form("my_form_2"):
   st.write("my_form_2")  
   model_id = st.text_input("model id ?")  
   submitted = st.form_submit_button("Submit")
