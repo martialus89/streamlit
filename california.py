@@ -34,7 +34,7 @@ with st.form("my_form"):
     'median_income': median_income
     }
     response = requests.post('https://c9e7-34-125-152-163.ngrok-free.app/predict', json=data_user)
-    st.write(f"Pred =  {eval(response.text)}")
+    st.write(f"{eval(response.text)}")
     
     
 
