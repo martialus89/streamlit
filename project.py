@@ -7,7 +7,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.sidebar.selectbox('Choisissez votre modèle :')
+st.sidebar.selectbox('Choisissez votre modèle', ['Model 1', 'Model 2', 'Model 3'])
 
 # Initialize chat history
 if "messages" not in st.session_state:
