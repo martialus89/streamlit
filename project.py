@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("My dashboard")
+st.title("My final project")
 st.subheader("My subtitle")
 
 df = pd.read_csv('data.csv', sep=';')
