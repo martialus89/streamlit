@@ -18,8 +18,7 @@ if histo:
 retrain = st.checkbox("Réentrainement du model")
 if retrain:
     list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
-    list_model.text
-    options = [row[1] for row in list_model]
+    options=list_model.json()
     st.sidebar.selectbox('Choisissez votre modèle', options)
 
 metrics = st.checkbox("Voir les metrics d'un modèle")
