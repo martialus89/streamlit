@@ -3,4 +3,3 @@ primaryColor = "#0000FF"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F0F0F0"
 textColor = "#000000"
-sidebar = { "backgroundColor": "#FFFFFF", "contrast": 1.2 }
