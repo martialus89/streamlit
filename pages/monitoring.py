@@ -8,7 +8,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
 conn = sqlite3.connect('dbmodel.db')
 cursor = conn.cursor()
 # Récupérer les données de la table
@@ -16,7 +15,8 @@ cursor.execute(f'SELECT distinct model_name FROM model')
 rows = cursor.fetchall()
 cursor.close()
 conn.close()
-st.sidebar.selectbox('Choisissez votre modèle', [rows])
+options = [row[0] for row in cursor.fetchall()]
+st.sidebar.selectbox('Choisissez votre modèle', options)
 
 
 histo = st.checkbox("Voir l'historique des conversations")
