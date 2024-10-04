@@ -9,6 +9,7 @@ st.set_page_config(
 )
 
 
+
 st.sidebar.selectbox('Choisissez votre modèle', ['Model 1', 'Model 2', 'Model 3'])
 
 
@@ -20,7 +21,9 @@ if histo:
 
 retrain = st.checkbox("Réentrainement du model")
 if retrain:
-    st.write("retrain !")
+    list_model = requests.get('https://36e8-34-16-180-130.ngrok-free.app/model')
+    list_model.text
+    st.write(list_model.text)
 
 metrics = st.checkbox("Voir les metrics d'un modèle")
 if metrics:
