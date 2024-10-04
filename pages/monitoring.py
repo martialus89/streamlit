@@ -16,7 +16,6 @@ histo = st.checkbox("Voir l'historique des conversations")
 if histo:
     r=requests.get('https://36e8-34-16-180-130.ngrok-free.app/read_table?table=model')
     r.text
-    st.write("histo!")
     st.write(r.text)
 
 retrain = st.checkbox("Réentrainement du model")
