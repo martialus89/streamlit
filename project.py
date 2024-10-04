@@ -1,5 +1,9 @@
 import streamlit as st
 
+[theme]
+base="dark"
+primaryColor="purple"
+
 st.set_page_config(
     page_title="projet",
     page_icon="🧊",
