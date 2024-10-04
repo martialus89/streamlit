@@ -9,9 +9,14 @@ st.set_page_config(
 )
 
 
-list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
-data = list_model.text
-st.sidebar.selectbox('Choisissez votre modèle', [data])
+conn = sqlite3.connect('dbmodel.db')
+cursor = conn.cursor()
+# Récupérer les données de la table
+cursor.execute(f'SELECT distinct model_name FROM model')
+rows = cursor.fetchall()
+cursor.close()
+conn.close()
+st.sidebar.selectbox('Choisissez votre modèle', [rows])
 
 
 histo = st.checkbox("Voir l'historique des conversations")
