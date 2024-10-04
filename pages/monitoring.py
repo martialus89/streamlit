@@ -21,7 +21,7 @@ if histo:
 
 retrain = st.checkbox("Réentrainement du model")
 if retrain:
-    list_model = requests.get('https://36e8-34-16-180-130.ngrok-free.app/model')
+    list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
     list_model.text
     st.write(list_model.text)
 
