@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import sqlite3
+import pandas as pd
 
 st.set_page_config(
     page_title="M O N I T O R I N G",
