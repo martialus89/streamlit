@@ -9,8 +9,9 @@ st.set_page_config(
 )
 
 
-
-st.sidebar.selectbox('Choisissez votre modèle', ['Model 1', 'Model 2', 'Model 3'])
+list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
+data = list_model.text
+st.sidebar.selectbox('Choisissez votre modèle', [data])
 
 
 histo = st.checkbox("Voir l'historique des conversations")
@@ -22,8 +23,8 @@ if histo:
 retrain = st.checkbox("Réentrainement du model")
 if retrain:
     list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
-    list_model.json
-    st.write(list_model.json)
+    list_model.text
+    st.write(list_model.text)
 
 metrics = st.checkbox("Voir les metrics d'un modèle")
 if metrics:
