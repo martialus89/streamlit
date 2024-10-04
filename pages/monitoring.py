@@ -20,7 +20,7 @@ retrain = st.checkbox("Réentrainement du model")
 if retrain:
     list_model = requests.get('https://3d92-34-16-180-130.ngrok-free.app/model')
     df=pd.DataFrame(list_model.json())
-    st.sidebar.selectbox('Choisissez votre modèle', df[0])
+    st.sidebar.selectbox('Choisissez votre modèle', df)
 
 metrics = st.checkbox("Voir les metrics d'un modèle")
 if metrics:
