@@ -7,11 +7,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.selectbox('Choisissez votre modèle', ['Model 1', 'Model 2', 'Model 3'])
-
-ville=df.ville.unique()
-user_selection = st.selectbox('Select une ville',ville)
-import streamlit as st
+st.sidebar.selectbox('Choisissez votre modèle', ['Model 1', 'Model 2', 'Model 3'])
 
 histo = st.checkbox("Voir l'historique des conversations")
 if histo:
