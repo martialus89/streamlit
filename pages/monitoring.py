@@ -1,5 +1,5 @@
 import streamlit as st
-import request
+import requests
 
 st.set_page_config(
     page_title="M O N I T O R I N G",
